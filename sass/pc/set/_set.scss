@@ -1,0 +1,153 @@
+.s-fix-footer-block {
+  height: 60px;
+  .fix-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+    background: $basecolor;
+  }
+}
+
+.s-fix-header-block {
+  height: 63px;
+  overflow: hidden;
+  .fix-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1em;
+    background: $headingcolor;
+    z-index: 10;
+  }
+}
+
+.s-header-search-block {
+  max-width: 1150px;
+  margin-right: auto;
+  margin-left: auto;
+  color: #FFF;
+  .header-search {
+    @include flx-row;
+    @include flx-middle;
+  }
+  .header-search-title {
+    font-size: 20px;;
+    font-weight: bold;
+  }
+  .header-search-item {
+    list-style: none;
+    margin-bottom: 0;
+    margin-right: 2em;
+    max-width: 700px;
+    height: 1em;
+    overflow: hidden;
+    line-height: 1;
+    color: #FFF;
+    li {
+      display: inline-block;
+      color: #FFF;
+      &:after {
+        content: '/';
+        display: inline-block;
+        padding-left: .5em;
+        padding-right: .5em;
+
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+      &.is-last {
+        &:after {
+          display: none;
+        }
+      }
+      &.is-showed {
+        display: inline-block;
+      }
+    }
+    .is-showed:last-child {
+      //display: none !important;
+    }
+  }
+  .header-search-change {
+  }
+  .change-btn {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 2px;
+    box-shadow: 0 2px 0 #888888;
+    font-weight: bold;
+    color: $linkColor;
+    background: #FFF;
+    cursor: pointer;
+    &:hover {
+      background: $linkColor;
+      color: #FFF;
+    }
+  }
+}
+
+.s-select-overlay-only-block {
+  .select-overlay-only {
+
+    .select-overlay-only-list {
+      margin-bottom: 15px;
+      overflow: hidden;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &.op-float {
+        >a{
+          float: left;
+        }
+        .check-field{
+          max-width:100%;
+          display: inline;
+          word-wrap: break-word;
+          white-space: normal;
+        }
+        .check-field span{
+          display: inline-block;
+        }
+      }
+      .is-disabled { //緊急対応用。本来の仕様では不要
+        width: auto;
+        min-height: 1.5em;
+        line-height: 1;
+        margin-bottom: .5em;
+        &:after {
+          content: '/';
+          display: inline-block;
+          margin-left: .5em;
+          margin-right: .7em;
+
+        }
+        &:last-child:after {
+          display: none;
+        }
+
+        label {
+          padding-left: 0;
+          margin-right: 0;
+        }
+        input + label {
+          &:before {
+            display: none;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.s-form-group-list {
+  display: inline-block;
+  select {
+
+  }
+}

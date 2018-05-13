@@ -1,0 +1,148 @@
+<?php
+
+return [
+    [
+        'id' => 1,
+        'tenant_id' => 1,
+        'column_name' => 'option104',
+        'subset_name' => '選択肢1',
+    ],
+    [
+        'id' => 2,
+        'tenant_id' => 1,
+        'column_name' => 'option104',
+        'subset_name' => '選択肢2',
+    ],
+    [
+        'id' => 3,
+        'tenant_id' => 1,
+        'column_name' => 'option104',
+        'subset_name' => '選択肢3',
+    ],
+    [
+        'id' => 4,
+        'tenant_id' => 1,
+        'column_name' => 'option105',
+        'subset_name' => '選択肢1',
+    ],
+    [
+        'id' => 5,
+        'tenant_id' => 1,
+        'column_name' => 'option105',
+        'subset_name' => '選択肢2',
+    ],
+    [
+        'id' => 6,
+        'tenant_id' => 1,
+        'column_name' => 'option105',
+        'subset_name' => '選択肢3',
+    ],
+    [
+        'id' => 7,
+        'tenant_id' => 1,
+        'column_name' => 'option106',
+        'subset_name' => '選択肢1',
+    ],
+    [
+        'id' => 8,
+        'tenant_id' => 1,
+        'column_name' => 'option106',
+        'subset_name' => '選択肢2',
+    ],
+    [
+        'id' => 9,
+        'tenant_id' => 1,
+        'column_name' => 'option106',
+        'subset_name' => '選択肢3',
+    ],
+    [
+        'id' => 10,
+        'tenant_id' => 1,
+        'column_name' => 'option107',
+        'subset_name' => '選択肢1',
+    ],
+    [
+        'id' => 11,
+        'tenant_id' => 1,
+        'column_name' => 'option107',
+        'subset_name' => '選択肢2',
+    ],
+    [
+        'id' => 12,
+        'tenant_id' => 1,
+        'column_name' => 'option107',
+        'subset_name' => '選択肢3',
+    ],
+    [
+        'id' => 13,
+        'tenant_id' => 2,
+        'column_name' => 'option104',
+        'subset_name' => '選択肢1',
+    ],
+    [
+        'id' => 14,
+        'tenant_id' => 2,
+        'column_name' => 'option104',
+        'subset_name' => '選択肢2',
+    ],
+    [
+        'id' => 15,
+        'tenant_id' => 2,
+        'column_name' => 'option104',
+        'subset_name' => '選択肢3',
+    ],
+    [
+        'id' => 16,
+        'tenant_id' => 2,
+        'column_name' => 'option105',
+        'subset_name' => '選択肢1',
+    ],
+    [
+        'id' => 17,
+        'tenant_id' => 2,
+        'column_name' => 'option105',
+        'subset_name' => '選択肢2',
+    ],
+    [
+        'id' => 18,
+        'tenant_id' => 2,
+        'column_name' => 'option105',
+        'subset_name' => '選択肢3',
+    ],
+    [
+        'id' => 19,
+        'tenant_id' => 2,
+        'column_name' => 'option106',
+        'subset_name' => '選択肢1',
+    ],
+    [
+        'id' => 20,
+        'tenant_id' => 2,
+        'column_name' => 'option106',
+        'subset_name' => '選択肢2',
+    ],
+    [
+        'id' => 21,
+        'tenant_id' => 2,
+        'column_name' => 'option106',
+        'subset_name' => '選択肢3',
+    ],
+    [
+        'id' => 22,
+        'tenant_id' => 2,
+        'column_name' => 'option107',
+        'subset_name' => '選択肢1',
+    ],
+    [
+        'id' => 23,
+        'tenant_id' => 2,
+        'column_name' => 'option107',
+        'subset_name' => '選択肢2',
+    ],
+    [
+        'id' => 24,
+        'tenant_id' => 2,
+        'column_name' => 'option107',
+        'subset_name' => '選択肢3',
+    ],
+];

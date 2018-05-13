@@ -1,0 +1,62 @@
+actor: Tester
+#coverage:
+#    #c3_url: http://localhost:8080/index-test.php/
+#    enabled: true
+#    #remote: true
+#    #remote_config: '../tests/codeception.yml'
+#    white_list:
+#        include:
+#            - ../models/*
+#            - ../controllers/*
+#            - ../commands/*
+#            - ../mail/*
+#    blacklist:
+#        include:
+#            - ../assets/*
+#            - ../config/*
+#            - ../runtime/*
+#            - ../vendor/*
+#            - ../views/*
+#            - ../web/*
+#            - ../tests/*
+paths:
+    tests: codeception
+    log: codeception/_output
+    data: codeception/_data
+    helpers: codeception/_support
+settings:
+    bootstrap: _bootstrap.php
+    memory_limit: 1024M
+    log: true
+    colors: true
+config:
+    # the entry script URL (with host info) for functional and acceptance tests
+    # PLEASE ADJUST IT TO THE ACTUAL ENTRY SCRIPT URL
+    test_entry_url: http://jm2.yii/index-test.php
+coverage:
+    enabled: true
+    #remote: true
+    #remote_config: ../tests/codeception.yml
+    #c3_url: http://jm2.yii/index-test.php
+    blacklist:
+        include:
+            - ../assets/*
+            - ../config/*
+            - ../runtime/*
+            - ../vendor/*
+            - ../views/*
+            - ../web/*
+            - ../tests/*
+            - ../common/GridHelper.php
+        exclude:
+            - ../vendor/proseeds/proseeds/base/*
+            - ../vendor/proseeds/proseeds/db/*
+            - ../vendor/proseeds/proseeds/models/*
+modules:
+    config:
+        Db:
+            dsn: 'mysql:host=localhost;dbname=jm2_test'
+            user: 'jm2user'
+            password: 'jm2pass'
+extensions:
+    enabled: [\FixtureExtension]

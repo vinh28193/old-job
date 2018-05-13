@@ -1,0 +1,186 @@
+{
+    "name": "yiisoft/yii2-app-basic",
+    "description": "Yii 2 Basic Project Template",
+    "keywords": ["yii2", "framework", "basic", "project template"],
+    "homepage": "http://www.yiiframework.com/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
+        "forum": "http://www.yiiframework.com/forum/",
+        "wiki": "http://www.yiiframework.com/wiki/",
+        "irc": "irc://irc.freenode.net/yii",
+        "source": "https://github.com/yiisoft/yii2"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.0.17",
+        "yiisoft/yii2-composer":"2.0.5",
+        "fxp/composer-asset-plugin":"v1.1.4",
+        "ezyang/htmlpurifier":"v4.9.3",
+        "cebe/markdown":"1.1.2",
+        "bower-asset/jquery":"2.2.4",
+        "bower-asset/yii2-pjax":"v2.0.6",
+        "bower-asset/punycode":"v1.3.2",
+        "bower-asset/jquery.inputmask":"3.3.8",
+        "yiisoft/yii2":"2.0.12",
+        "ckeditor/ckeditor":"4.7.2",
+        "2amigos/yii2-ckeditor-widget":"2.1.0",
+        "bower-asset/bootstrap":"v3.3.7",
+        "yiisoft/yii2-bootstrap":"2.0.6",
+        "bower-asset/select2":"4.0.3",
+        "2amigos/yii2-editable-widget":"1.1.1",
+        "2amigos/yii2-multi-select-widget":"0.1.1",
+        "bower-asset/event-source-polyfill":"0.0.9",
+        "bower-asset/videojs":"v4.7.3",
+        "doctrine/lexer":"v1.0.1",
+        "egulias/email-validator":"2.1.2",
+        "google/apiclient":"dev-v1-master#107dc7d30fa9c6e5b75ce1200665e4fc3adfba6e",
+        "kartik-v/yii2-krajee-base":"v1.8.8",
+        "kartik-v/yii2-field-range":"v1.3.1",
+        "kartik-v/yii2-sortable":"v1.2.0",
+        "kartik-v/yii2-sortable-input":"v1.1.0",
+        "kartik-v/yii2-widget-activeform":"v1.4.8",
+        "kartik-v/yii2-widget-affix":"v1.0.0",
+        "kartik-v/yii2-widget-alert":"v1.1.0",
+        "kartik-v/yii2-widget-colorinput":"v1.0.3",
+        "kartik-v/yii2-widget-datepicker":"v1.4.2",
+        "kartik-v/yii2-widget-datetimepicker":"v1.4.4",
+        "kartik-v/dependent-dropdown":"v1.4.4",
+        "kartik-v/yii2-widget-depdrop":"v1.0.4",
+        "kartik-v/bootstrap-fileinput":"v4.4.3",
+        "kartik-v/yii2-widget-fileinput":"v1.0.6",
+        "kartik-v/yii2-widget-growl":"v1.1.1",
+        "kartik-v/yii2-widget-rangeinput":"v1.0.1",
+        "kartik-v/bootstrap-star-rating":"v4.0.2",
+        "kartik-v/yii2-widget-rating":"v1.0.2",
+        "kartik-v/yii2-widget-select2":"2.1.0",
+        "kartik-v/yii2-widget-sidenav":"v1.0.0",
+        "kartik-v/yii2-widget-spinner":"v1.0.0",
+        "kartik-v/yii2-widget-switchinput":"v1.3.1",
+        "kartik-v/yii2-widget-timepicker":"v1.0.3",
+        "kartik-v/yii2-widget-touchspin":"v1.2.1",
+        "kartik-v/yii2-widget-typeahead":"v1.0.1",
+        "webmozart/assert":"1.2.0",
+        "phpdocumentor/reflection-common":"1.0",
+        "phpdocumentor/type-resolver":"0.3.0",
+        "phpdocumentor/reflection-docblock":"3.2.2",
+        "bower-asset/jquery-ui":"1.11.4",
+        "yiisoft/yii2-jui":"2.0.6",
+        "phpoffice/phpexcel":"1.8.1",
+        "kartik-v/yii2-widgets":"v3.4.0",
+        "bower-asset/iscroll":"v5.2.0",
+        "bower-asset/flat-ui":"2.3.0",
+        "bower-asset/bootbox":"v4.0.0",
+        "proseeds/proseeds":"1.4.1",
+        "psr/log":"1.0.2",
+        "rsr/yii2-button-dropdown-sorter":"1.0.5",
+        "bower-asset/autosize":"4.0.0",
+        "uran1980/yii2-textarea-autosize":"0.0.6",
+        "swiftmailer/swiftmailer":"v6.0.1",
+        "yiisoft/yii2-swiftmailer":"2.1.0",
+        "symfony/yaml":"v3.1.10",
+        "symfony/finder":"v3.1.10",
+        "symfony/event-dispatcher":"v3.1.10",
+        "symfony/polyfill-mbstring":"v1.5.0",
+        "symfony/dom-crawler":"v3.1.10",
+        "symfony/css-selector":"v3.1.10",
+        "symfony/debug":"v3.3.8",
+        "symfony/console":"v3.1.10",
+        "symfony/browser-kit":"v3.1.10",
+        "sebastian/version":"2.0.1",
+        "sebastian/resource-operations":"1.0.0",
+        "sebastian/recursion-context":"1.0.5",
+        "sebastian/object-enumerator":"1.0.1",
+        "sebastian/global-state":"1.1.1",
+        "sebastian/exporter":"1.2.2",
+        "sebastian/environment":"1.3.8",
+        "sebastian/diff":"1.4.3",
+        "sebastian/comparator":"1.2.4",
+        "phpunit/php-text-template":"1.2.1",
+        "doctrine/instantiator":"1.0.5",
+        "phpunit/phpunit-mock-objects":"3.1.3",
+        "phpunit/php-timer":"1.0.9",
+        "phpunit/php-file-iterator":"1.4.2",
+        "sebastian/code-unit-reverse-lookup":"1.0.1",
+        "phpunit/php-token-stream":"1.4.11",
+        "phpunit/php-code-coverage":"3.3.3",
+        "phpspec/prophecy":"v1.7.0",
+        "myclabs/deep-copy":"1.6.1",
+        "phpunit/phpunit":"5.3.5",
+        "psr/http-message":"1.0.1",
+        "guzzlehttp/psr7":"1.4.2",
+        "guzzlehttp/promises":"v1.3.1",
+        "guzzlehttp/guzzle":"6.3.0",
+        "symfony/process":"v3.3.8",
+        "facebook/webdriver":"1.4.1",
+        "fzaninotto/faker":"v1.7.1",
+        "creocoder/yii2-flysystem":"0.8.*",
+        "league/flysystem-aws-s3-v2":"~1.0",
+        "wbraganca/yii2-dynamicform": "dev-master"
+    },
+    "require-dev": {
+        "codeception/c3":"2.0.12",
+        "codeception/codeception":"2.1.11",
+        "codeception/specify":"0.4.6",
+        "codeception/verify":"0.4.0",
+        "jakoch/phantomjs-installer":"2.1.1",
+        "squizlabs/php_codesniffer":"2.9.1",
+        "proseeds/code-sniffer":"dev-master",
+        "yiisoft/yii2-codeception":"2.0.6",
+        "yiisoft/yii2-debug":"2.0.9",
+        "yiisoft/yii2-faker":"2.0.3",
+        "phpspec/php-diff":"v1.1.0",
+        "bower-asset/typeahead.js":"v0.11.1",
+        "yiisoft/yii2-gii":"2.0.5"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject",
+            "Proseeds\\CodeSniffer\\Installer::setupStandards"
+        ],
+        "post-install-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS",
+            "Codeception\\c3\\Installer::copyC3ToRoot",
+            "Proseeds\\CodeSniffer\\Installer::setupStandards",
+            "find ./web/assets/* ! -name '.gitignore' | xargs rm -rf"
+        ],
+        "post-update-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS",
+            "Codeception\\c3\\Installer::copyC3ToRoot",
+            "Proseeds\\CodeSniffer\\Installer::setupStandards",
+            "find ./web/assets/* ! -name '.gitignore' | xargs rm -rf"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ],
+            "generateCookieValidationKey": [
+                "config/web.php"
+            ]
+        },
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/proseeds/proseeds"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/proseeds/code-sniffer"
+        }
+    ]
+}

@@ -1,0 +1,94 @@
+---
+# pathを通す
+- name: add paths
+  template:
+    src: profile.j2
+    dest: /etc/profile
+    backup: yes
+
+# フォントインストール
+- mame: install fonts
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - ipa-pmincho-fonts
+    - ipa-pgothic-fonts
+
+# gitインストール
+#- name: install IUS repository
+#  shell: curl -s https://setup.ius.io/ | bash
+#  tags: git
+#
+#- name: install the latest version of git again
+#  yum:
+#    name: git2u
+#    state: latest
+#  tags: git
+
+# sass関連
+- name: install ruby
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - ruby
+    - ruby-devel
+    - rubygems
+    - gcc
+  tags: sass
+
+- name: install sass and compas
+  gem:
+    name: "{{ item }}"
+    state: present
+    user_install: no
+  with_items:
+    - sass
+    - compass
+  tags: sass
+
+- name: compile scss
+  shell: export PATH="/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin" && compass compile
+  args:
+    chdir: "{{ project_root }}"
+  tags: sass
+
+# composer install
+- name: composer install
+  composer:
+    command: install
+    working_dir: "{{ project_root }}"
+    no_dev: false
+  tags: composer
+
+# 開発用DBの準備
+- name: install pip
+  yum:
+    name: python-pip
+    state: present
+
+- name: install pip
+  pip:
+    name: pexpect
+
+- name: migrate up
+  expect:
+    command: "{{ item }}"
+    responses:
+      '[.\n]*Apply the above migration.*': y
+    timeout: 1800
+  args:
+    chdir: "{{ project_root }}"
+  with_items:
+    - php ./yii migrate/up
+    - php ./tests/codeception/bin/yii migrate/up
+
+- name: fixture load
+  expect:
+    command: php ./yii fixture/load '*'
+    responses:
+      '[.\n]*Load above fixtures?.*': y
+    timeout: 1800
+  args:
+    chdir: "{{ project_root }}"

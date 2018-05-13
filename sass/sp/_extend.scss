@@ -1,0 +1,115 @@
+.ex-pos-middle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.ex-side-space {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.ex-text-one-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ex-btn-padding {
+  padding: .3em .8em;
+}
+
+.ex-btn-padding-sml {
+  padding: .2em .5em;
+}
+
+.ex-text-lh {
+  line-height: 1.6;
+}
+
+.ex-pd-space {
+  padding: 1em 1.2em;
+}
+
+.ex-radius {
+  border-radius: 4px;
+}
+
+.ex-heding-reset {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.ex-font-lrg {
+  font-size: 1.3em;
+}
+
+.ex-list-reset { //ulの余白を無くす
+  padding-left: 0;
+  margin-top: 0;
+  li {
+    list-style: none;
+  }
+}
+
+.ex-btn-input-label-reset {
+  label {
+    padding-left: 0;
+    margin-right: 0;
+  }
+  label:before, label:after {
+    display: none;
+  }
+}
+
+.ex-btn-input-select {
+  @extend .ex-btn-padding-sml;
+  @extend .ex-radius;
+  font-size: 18px;
+  line-height: 1.2;
+  display: inline-block;
+  text-align: center;
+  input[type="checkbox"] {
+    display: none;
+  }
+  &.is-selected {
+    @extend .ex-btn-input-label-reset;
+    input[type="radio"], input[type="checkbox"] {
+      display: none;
+    }
+  }
+}
+
+.ex-btn-radio {
+  @extend .ex-btn-input-select;
+  label {
+    &:after {
+      display: none;
+    }
+  }
+  &.is-selected {
+    background: $fontcolor;
+    color: #FFF;
+    padding-left:21px;
+    padding-right:21px;
+  }
+}
+
+.ex-input-text-box {
+  border-radius: 5px;
+  min-height: 38px;
+  height: 100%;
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+.ex-content-area-box {
+  @extend .ex-side-space;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #F8F8F8;
+}

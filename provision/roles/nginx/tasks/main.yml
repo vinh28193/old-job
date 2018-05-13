@@ -1,0 +1,84 @@
+---
+- name: Install nginx repository
+  yum: name=http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm state=present
+  tags:
+    - nginx
+    - php7
+
+- name: Install nginx
+  yum: name=nginx state=present
+  tags:
+    - nginx
+    - php7
+
+- name: Install php extensions
+  yum: name={{ item }} state=present enablerepo=remi-php70,remi,epel
+  with_items:
+    - php
+    - php-fpm
+    - php-gd
+    - php-intl
+    - php-mbstring
+    - php-mcrypt
+    - php-mysqlnd
+    - php-opcache
+    - php-xml
+    - php-zip
+    - php-pecl-xdebug
+    - php-pecl-ssh2
+  tags:
+    - nginx
+    - php7
+
+- name: Copy php-fpm configuration
+  template: src=www.conf dest=/etc/php-fpm.d/www.conf backup=yes
+  notify: restart php-fpm
+  tags:
+    - configupdate
+    - nginx
+    - php7
+
+- name: Copy php.ini
+  template: src=php.ini dest=/etc/php.ini backup=yes
+  notify: 
+    - restart php-fpm
+    - restart nginx
+  tags:
+    - configupdate
+    - php7
+
+- name: www directory
+  file:
+    path: "/var/www/{{ system_name }}"
+    state: directory
+    owner: nginx
+    group: nginx
+    mode: 0775
+  tags: php7
+
+- name: Copy nginx configuration
+  template: src=nginx.conf dest=/etc/nginx/nginx.conf backup=yes
+  notify:
+    - restart nginx
+  tags:
+    - configupdate
+    - php7
+
+- name: Copy nginx configuration
+  template: src=default.conf dest=/etc/nginx/conf.d/default.conf backup=yes
+  notify: 
+    - restart nginx
+    - restart php-fpm
+  tags:
+    - configupdate
+    - php7
+
+- name: Copy nginx fastcgi_params file
+  template: src=fastcgi_params dest=/etc/nginx/fastcgi_params backup=yes
+  notify:
+    - restart nginx
+    - restart php-fpm
+  tags:
+    - configupdate
+    - php7
+

@@ -1,0 +1,15 @@
+---
+- name: Install epel-release
+  yum: name=epel-release state=present
+
+- name: Install remi.repo
+  yum: name=http://rpms.famillecollet.com/enterprise/remi-release-7.rpm state=present
+
+- name: Copy system-auth
+  template: src=etc/pam.d/system-auth dest=/etc/pam.d/system-auth backup=yes
+  tags: login-settings
+
+- name: Copy login.defs
+  template: src=etc/login.defs dest=/etc/login.defs backup=yes
+  tags: login-settings
+

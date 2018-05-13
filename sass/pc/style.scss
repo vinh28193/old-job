@@ -1,0 +1,139 @@
+@charset "utf-8";
+
+//各ページ用
+@import "../theme";
+//旧バージョンのカラーテーマ
+@import "theme";
+//新バージョンのカラーテーマ
+@import "extend";
+//新バージョンのextend集
+@import "mixin"; //新バージョンのminin集
+body.type-pc {
+  background: #F7F7F7;
+  @import "component/component";
+  @import "set/set";
+  @import "page/area-top";
+  @import "page/job-search";
+
+  .form-group {
+    position: relative;
+    display: inline-block;
+    margin-right: 1.5em;
+    &:after {
+      font-family: FontAwesome;
+      content: '';
+      position: absolute;
+      top: 0px;
+      right: 7.5px;
+      font-size: 10px;
+    }
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      margin-left: -5px;
+      height: 38px;
+      border: 1px solid #eee;
+      padding-right: 2em;
+      margin-bottom:.8em;
+      &.op-mb0{
+        margin-bottom: 0;
+      }
+    }
+    select::-ms-expand {
+      display: none;
+    }
+  }
+
+  .searchField.op-search-fit {
+    .form-control {
+      margin-right: 1em;
+    }
+    .form-button {
+      background: #019FE6;
+      color: #FFF;
+      display: inline-block;
+      padding:0 10px 7px;
+      line-height: 1;
+      border: none;
+      border-radius: 3px;
+      font-weight: bold;
+      background: #03A0E6;
+      box-shadow: 0 3px 0 #888888;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      vertical-align: top;
+      &:hover{
+        transition: .1s all;
+        margin-top: 3px ;
+        margin-bottom: -3px;
+        box-shadow: 0 0 0 #888888;
+      }
+    }
+    .fa.fa-search {
+      height: 1em;
+      line-height: 1;
+    }
+  }
+
+  .mod-resultForm.op-border-none {
+    background: none;
+    padding: 0;
+  }
+  .widgetlayout2 {
+    .mod-resultForm {
+      table {
+        border-bottom: 1px solid $basecolor;
+      }
+      th {
+        width: 20%;
+      }
+    }
+  }
+  .button-group {
+    &.op-wiget {
+      clear: both;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      background: #FFF;
+    }
+    .form-button {
+      margin-right: 15px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .mod-btn9 {
+
+  }
+
+  .js-omit-select-txt-block {
+    position: relative;
+    padding-left: 2em;
+    color: $fontcolor;
+    &.is-maxed {
+      &:after {
+        content: '…';
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+    }
+  }
+  .js-omit-select-txt-item {
+    display: none;
+
+    &.is-showed {
+      display: inline;
+    }
+  }
+}
+
+
+
+

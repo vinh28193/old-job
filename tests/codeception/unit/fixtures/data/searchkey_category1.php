@@ -1,0 +1,67 @@
+<?php
+return [
+    [
+        'id' => 1,
+        'tenant_id' => 1,
+        'searchkey_category_name' => '雇用条件',
+        'sort' => 1,
+        'valid_chk' => 1,
+        'searchkey_category_no' => 1,
+    ],
+    [
+        'id' => 2,
+        'tenant_id' => 1,
+        'searchkey_category_name' => '募集条件',
+        'sort' => 1,
+        'valid_chk' => 1,
+        'searchkey_category_no' => 2,
+    ],
+    [
+        'id' => 3,
+        'tenant_id' => 1,
+        'searchkey_category_name' => '就業時間・曜日',
+        'sort' => 1,
+        'valid_chk' => 1,
+        'searchkey_category_no' => 3,
+    ],
+    [
+        'id' => 4,
+        'tenant_id' => 1,
+        'searchkey_category_name' => '活かせるスキル',
+        'sort' => 1,
+        'valid_chk' => 1,
+        'searchkey_category_no' => 4,
+    ],
+    [
+        'id' => 5,
+        'tenant_id' => 2,
+        'searchkey_category_name' => '雇用条件',
+        'sort' => 1,
+        'valid_chk' => 1,
+        'searchkey_category_no' => 1,
+    ],
+    [
+        'id' => 6,
+        'tenant_id' => 2,
+        'searchkey_category_name' => '募集条件',
+        'sort' => 1,
+        'valid_chk' => 1,
+        'searchkey_category_no' => 2,
+    ],
+    [
+        'id' => 7,
+        'tenant_id' => 2,
+        'searchkey_category_name' => '就業時間・曜日',
+        'sort' => 1,
+        'valid_chk' => 1,
+        'searchkey_category_no' => 3,
+    ],
+    [
+        'id' => 8,
+        'tenant_id' => 2,
+        'searchkey_category_name' => '活かせるスキル',
+        'sort' => 1,
+        'valid_chk' => 1,
+        'searchkey_category_no' => 4,
+    ]
+];

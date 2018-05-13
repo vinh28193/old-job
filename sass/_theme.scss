@@ -1,0 +1,66 @@
+/* 
+  	上書き用
+-------------
+01. Color Setting
+02. link
+03. table
+-------------		
+*/
+
+/*  01. Color Setting =============================== */
+
+// ------------- ベースカラーの変数設定 ------------- 
+
+//↓サイトのテーマカラー（濃）を入力してください。（現在：黒100%）
+	$themecolor:#000;
+
+//↓サイトのテーマカラー（薄）を入力してください。（現在：グレイ）
+	$basecolor:#eee; 
+
+//↓ベースとなるフォントカラーを入力してください。（現在：黒70%）
+	$fontcolor:#333;
+	
+//↓ベースとなるtebleのborder-colorを入力してください。（現在：黒70%）
+	$tebleBordercolor:#ccc;
+
+  $linkhovercolor:#FCB394;  //ホバー時の色（初期値：オレンジ）
+  $submitbtncolor:#03A0E6; //応募・登録等のボタンカラー（水色）
+  $headingcolor:#4dac26; //メインのカラー（緑色）
+  $highlightcolor: #DC9610;   //ホバー時の色（初期値：黄色）
+
+/* === header,footer === */
+
+.footer{
+	background:$themecolor;
+	color:#fff;
+
+		 a{color:#fff;
+	 }
+}
+.copyright{
+	background: $basecolor;
+}
+/* === tags === */
+strong{
+	color:$headingcolor;
+}
+
+/* 02. link ======================================= */
+
+//↓ナビのホバー時の色の設定
+.nav li a:hover{
+	background:$basecolor;
+}
+
+//↓パンくずリストの背景色
+.breadcrumb {
+	background:$basecolor;
+}
+
+
+/* 03. table ======================================= */
+.mod-table1 th{
+	background:$basecolor;
+	font-weight: bold;
+}
+

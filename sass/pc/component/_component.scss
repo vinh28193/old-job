@@ -1,0 +1,19 @@
+.c-select-only {
+  width: auto;
+  padding-right: 1em;
+  .fa {
+    display: none;
+  }
+  &.mod-btn9 {
+    .fa {
+      display: inline-block;
+      background: #000;
+    }
+  }
+
+}
+.c-form-group-label{
+  font-size:12px;
+  color: $labelColor;
+  margin-bottom:-.5em;
+}

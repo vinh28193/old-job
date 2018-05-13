@@ -1,0 +1,74 @@
+#サーバーのansibleとファイル構成を極力変えないためにここで変数をincludしています
+- name: include vars of dbsevers
+  include_vars: "{{ project_root }}/provision/group_vars/dbservers"
+  tags: always
+
+- name: delete
+  shell: rm -rf /var/lib/mysql
+
+- name: mysql repo
+  yum: name=http://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm state=present
+  tags: mysql_setting,
+
+- name: mysqld is installed
+  yum:
+    name: "{{ item }}"
+    enablerepo: mysql56-community
+    disablerepo: mysql57-community
+    state: present
+  with_items:
+    - mysql-community-server
+    - mysql-community-client
+    - mysql-community-common
+    - mysql-community-libs
+  tags: mysql_setting
+
+- name: mysql-python module installed
+  yum: name=MySQL-python state=present
+  tags: mysql_setting
+
+- name: Create Mysql configuration file
+  template: src=my.cnf.j2 dest=/etc/my.cnf backup=yes
+  notify:
+  - restart mysql
+  tags:
+    - mysql_setting
+    - mysql_config_update
+
+- name: Init MySQL
+  shell: mysql_install_db --datadir=/var/lib/mysql --user=mysql
+
+- name: Start Mysql Service
+  systemd: name=mysqld state=restarted enabled=yes
+  tags: mysql_setting
+
+- mysql_db: name={{ item }} state=present
+  with_items:
+    - "{{ db_name }}"
+    - "{{ test_db_name }}"
+  tags: mysql_setting
+
+- mysql_user:
+    name: "{{ db_username }}"
+    password: "{{ db_password }}"
+    priv: "{{ db_name }}.*:ALL/{{ test_db_name }}.*:ALL"
+    host: "{{ item }}"
+    state: present
+  with_items:
+    - "%"
+    - "localhost"
+  tags: mysql_setting,mysql_auth
+
+- name: restore "{{ db_name }}" and "{{ test_db_name }}"
+  mysql_db:
+    state: import
+    name: "{{ item }}"
+    target: "{{ dump_file_name }}"
+  with_items:
+    - "{{ db_name }}"
+    - "{{ test_db_name }}"
+
+- name: change mode of .sock
+  file:
+    path: /var/lib/mysql
+    mode: 0755

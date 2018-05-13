@@ -1,0 +1,554 @@
+/* 
+  	bodyとnav、header、footerの基本セッティング
+-------------
+01. Reset, body, img
+02. header,nav,パンくず
+03. footer,page_top
+04. table
+05. help-block
+-------------
+*/
+
+/* 01. Reset, body, img ========================== */
+
+/* --- reset --- */
+html {
+	line-height: 1;
+}
+/* html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, */
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+/* dl, dt, dd, ol, ul, li, */
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+	vertical-align: middle;
+}
+a img {
+	border: none;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+	display: block;
+}
+
+
+
+.clearfix  {@include pie-clearfix();}	
+.clear{clear:both;}
+
+body{
+	font-family: Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "游ゴシック", YuGothic, sans-serif;
+/*	font-size: 85%; */
+	line-height: 1.75;
+}
+.subcontainer{
+	margin: 20px auto 50px;
+}
+.search-container{
+	background:#FFF;
+}
+
+/* スマホ時のみcontainer無効 */
+@media(max-width: 767px){
+	.flexcontainer{
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+p{
+	font-size: 14px;
+}
+
+/* ------ img ------ */
+//↓レスポンシブ対応
+img{
+	vertical-align: top;
+	max-width:100%;
+	height:auto;
+}
+//↓リンク画像のホバー時は全て半透明に
+a:hover img{
+	opacity:0.7;
+	filter: alpha(opacity=70);
+}
+
+a,a:link,a:hover,a:active,a:visited{
+	text-decoration:none;
+}
+
+
+/* 02. header,nav,パンくず ============================= */
+
+.header{
+	@extend .clearfix;
+	padding:0px 0 0 0;
+	background: #FFF;
+
+	.navbar-toggle{
+		margin: 0;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	.navbar-toggle.pull-right{
+		margin: 15px;
+		margin-bottom: 0;
+	}
+
+	.navbar-toggle.js-offcanvas-has-events .sr-only {
+		position: static;
+		width: auto;
+		height: auto;
+		margin: 0;
+		padding: 0;
+		overflow: auto;
+		clip: rect(0, 0, 0, 0);
+		border: 0;
+	}
+}
+
+//スマホ
+@media (max-width: 767px) {
+	.header .container {
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+	.logo {
+		margin-top: 5px;
+		margin-bottom: 5px;
+		width: 150px;
+		height: 43px;
+		position: relative;
+		a {
+			display: block;
+			height: 43px;
+			img {
+				vertical-align: middle;
+				height: 100%;
+				width: auto;
+				}
+		}
+	}
+}
+
+//ロゴ上部のh1テキスト
+.pagetitle{
+	background:#FFF;
+}
+.pagetitle h1{
+	font-size:85%;
+	padding:20px 0 10px;
+	margin:0px;
+}
+
+.logo{
+	width:30%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	float:left;
+}
+
+@media(max-width: 991px){
+	.logo{
+		width: 25%;
+		margin-top: 8px;
+	}
+}
+
+@media (max-width: 767px) {
+	.pagetitle{
+		display: none;
+	}
+	.logo{
+		margin-top: 10px;
+		margin-bottom: 10px;
+		width: 70%;
+	}
+}
+
+/* nav -------------------- */
+@media (min-width: 768px) {
+	.navbar{
+		float: right;
+		margin: 0 0 5px 0;
+	}
+}
+
+@media (max-width: 767px) {
+	.navbar {
+		background: rgb(248,248,248);
+		border-color: rgb(231,231,231);
+	}
+	.nav{}
+}
+
+.nav a{
+	color: #000;
+}	
+
+.nav a:hover{
+	background: rgba(0,0,0,0) !important;
+}
+
+@media (min-width: 768px){
+	.nav-wrapper{
+		.nav{
+			display: block;
+			clear: both;
+			height: 50%;
+
+			.fa{
+				vertical-align: baseline;
+			}
+
+			&__phone{
+				margin-top: -2.5px;
+				margin-left: 30px;
+				a{
+					font-size: 200%;
+					font-weight: bold;
+					pointer-events: none;
+				}
+	  
+				.fa{
+					vertical-align: middle;
+				}
+				.ruby{
+					text-align:center;
+					font-size:11px;
+					background:#F4F4F4;
+					display:block;
+					margin-bottom:2.5px;
+				}
+			}
+
+			li{
+				padding: 5px 15px;
+
+				a{
+					padding: 0;
+				}
+			}
+		}
+
+		.nav--sub{
+			//margin-bottom: 2.5px;
+			float: right;
+			li{
+				padding: 5px;
+			}
+		}
+
+		.nav--main{
+			float: right;
+			li{
+				border-right: 1px solid #ddd;
+	  
+				&:first-child{
+					border-left: 1px solid #ddd;
+				}
+			}
+		}
+	}
+}
+
+//タブレット
+@media(max-width: 991px){
+	.nav-wrapper{
+		.nav{
+			li{
+				padding: 3px 10px;
+			}
+
+			&__phone{
+				margin-left: 10px;
+				a{
+					font-size: 160%;
+				}
+			}
+		}
+
+		.nav--sub{
+			li{
+				padding: 3px;
+			}
+		}
+	}
+}
+
+@media(max-width: 767px){
+	.nav-wrapper{
+		margin: 0;
+		padding: 0;
+
+		.nav{
+			margin: 0 15px;
+			li{
+				margin: 0;
+				padding: 0;
+
+				a{
+					padding-left: 0;
+				}
+			}
+
+			li.nav__phone{
+				margin-top: 15px;
+
+				a{
+					padding: 5px;
+					margin-top: 0;
+					color: $submitbtncolor;
+					font-size: 18px;
+				}
+			}
+		}
+    
+		.nav--main{
+			clear: both;
+			padding: 0;
+		}
+
+		.nav--sub{
+			margin-top: 15px;
+			padding: 0;
+			padding-top: 15px;
+			border-top: 1px solid #ddd;
+
+			.fa{
+				vertical-align: baseline;
+			}
+		}
+	}
+}
+
+/* breadcrumb ------------- */
+.breadcrumb {
+	font-size:85%;
+	padding:8px;
+}
+.breadcrumb ul{margin-bottom:0;}
+.breadcrumb li {
+	display: inline-block;
+}
+.breadcrumb li+li:before {
+	padding: 0 5px;
+	color: #ccc;
+	content: "/\00a0";
+}
+#areaTop .breadcrumb{
+	margin-bottom:0px;
+}
+@media(max-width: 767px){
+	#result .breadcrumb,
+	#detail .breadcrumb,
+	#searchJob .breadcrumb,
+	#search-area .breadcrumb,
+	#search-railway .breadcrumb,
+	#search-wage .breadcrumb,
+	#search-merit .breadcrumb,
+	#send-mobile .breadcrumb,
+	#send-mobile-complete .breadcrumb,
+	#apply .breadcrumb,
+	#apply-confirm .breadcrumb,
+	#apply-complete .breadcrumb,
+	#pass-apply .breadcrumb,
+	#pass-apply-complete .breadcrumb,
+	#entry-auth .breadcrumb,
+	#entry-history .breadcrumb,
+	#page404 .breadcrumb,
+	#terms .breadcrumb{
+		display:none;
+	}
+}
+
+/* paragraph ------------- */
+p{
+	margin-bottom: 10px;
+	line-height: 1.75;
+}
+
+/* 03. footer,page_top =============================== */
+
+/* page_top --------------*/
+.page_top{
+	text-align:center;
+	clear:both;
+	float:right;
+	position:fixed;
+	bottom:1%;
+	right:20px;
+	
+	.mod-btn1{
+		width:60px;
+		height:60px;
+		font-size:13px;
+		line-height:47px;
+		border-radius: 60px;
+		background-color:#000;
+		border-color:#000;
+		color:#FFF;
+		text-decoration:none;
+		transition: 0.3s ease-in-out;
+	}
+	.mod-btn1:link{
+		color:#FFF;
+	}
+	.mod-btn1:hover{
+		background-color:#FFF;
+		border-color:#000 ;
+		color:#000;
+	}
+}
+@media(max-width: 767px){
+	.page_top{
+		right:1%;
+			.mod-btn1{
+				width:40px;
+				height:40px;
+				line-height:27px;
+				border-radius: 40px;
+			}
+	}
+}
+
+/* copyright ------------- */
+.copyright{
+	
+	text-align:center;
+	padding:7px;
+	margin-bottom: -25px;
+	
+	p{
+		font-size:12px;
+	}
+}
+
+/* footer ------------- */
+.footer{
+	margin-top: 30px;
+	padding: 15px 0;
+	font-size: 85%;	
+}
+
+@media(max-width: 767px){
+	.footer{
+		margin-top: 0px;
+		padding: 0;
+		font-size: 13px;
+
+		.container{
+			padding: 0;
+		}
+
+		.footer-nav{
+			padding: 0;
+			width: 95%;
+			margin:15px 2.5%;
+			border-top:1px solid #222;
+			border-left:1px solid #222;
+			text-align: left;
+			@include pie-clearfix();
+
+			li{
+				display: block;
+				float: left;
+				width: 50%;
+				border: 1px solid #222;
+				border-left: none;
+				border-top: none;
+				font-size: 13px;
+				text-align: center;
+
+				a{
+					display: block;
+					padding: 7.5px 0;
+					width: 100%;
+				}
+
+				&:hover{
+					background: #222;
+				}
+			}
+
+			> li+li:before{
+				padding: 0;
+				content: none; 
+			}
+		}
+	}
+}
+
+.footer-nav{
+	padding: 5px;
+	text-align:center;
+}
+
+.footer-nav > li {
+	display: inline-block;
+}
+
+.footer-nav > li+li:before {
+	padding: 0 5px;
+	content: " | ";
+}
+
+.footer-note{
+	margin:30px 0;
+}
+
+@media(max-width: 767px){
+	.footer-note{
+		margin: 30px 15px;
+	}
+}
+
+
+/* 04. table ========================== */
+.table {
+	max-width: 100%;
+	width: 100%;
+}
+table {
+	background-color: transparent;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.table > caption, .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th{
+	line-height: 1.75;
+	padding: 8px;
+	vertical-align: top;
+}
+.text-left {    text-align: left;}
+.text-center {    text-align: center;}
+.text-right {    text-align: right;}
+.text-justify {    text-align: justify;}
+.text-nowrap {    white-space: nowrap;}
+
+
+/* 05. help-block ========================== */
+.help-block:empty{margin: 0;}

@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+//インポート用SASSファイルです。
+//コンパイル後はこのファイルのみCSSとして書き出されます。
+
+@import "compass";
+
+//bootstrap - Gridsystem,Nav,Graphiconを利用
+//@import "bootstrap";
+
+@import "fontawesome/variables";
+@import "fontawesome/mixins";
+@import "fontawesome/path";
+@import "fontawesome/core";
+@import "fontawesome/icons";
+
+//レスポンシブスライダー用
+@import "slick/slick";
+@import "slick/slick-theme";
+
+//スマホナビの横スライド用
+@import "offcanvas/bootstrap.offcanvas";
+
+//上書き用（カラーセッティング有）
+@import "theme";
+
+//bodyとnav、header、footerの基本セッティング
+@import "base";
+
+//ボタン、mixinなど使い回しコンポーネント
+@import "module";
+
+//エリアトップのウィジェット用
+@import "widget";
+
+//js用
+@import "state";
+
+//各ページ用
+@import "page";

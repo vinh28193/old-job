@@ -1,0 +1,40 @@
+---
+- name: Install composer
+  shell: >
+    curl -sS https://getcomposer.org/installer | php -- --version="1.5.5" && mv composer.phar composer
+    chdir=/usr/local/bin
+    creates=/usr/local/bin/composer
+  tags: composer
+
+- name: Install composer-plugin
+  shell: composer global require "fxp/composer-asset-plugin:v1.4.2"
+  become: yes
+  become_user: vagrant
+  tags: composer
+
+- name: Install composer-plugin
+  shell: composer global require hirak/prestissimo
+  become: yes
+  become_user: vagrant
+  tags: composer
+
+- name: make dir for composer auth.json
+  file:
+    path: /home/vagrant/.config/composer
+    state: directory
+    owner: vagrant
+    group: vagrant
+    mode: 0775
+  tags: composer
+
+- name: set github-oauth
+  copy:
+      src: "{{ project_root }}/provision/roles/composer/files/auth.json"
+      dest: "{{ item.file }}"
+      owner: "{{ item.user }}"
+      group: "{{ item.user }}"
+      mode: 0600
+  with_items:
+    - { file: /home/vagrant/.config/composer/auth.json, user: vagrant }
+    - { file: /root/.composer/auth.json, user: root }
+  tags: composer

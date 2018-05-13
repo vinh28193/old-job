@@ -1,0 +1,9 @@
+# This is used for the nginx server configuration.
+# project_root, system_nameがvagrantから渡されています
+
+server_hostname: localhost
+db_username: "{{ system_name }}user"
+db_password: "{{ system_name }}pass"
+db_name: "{{ system_name }}"
+test_db_name: "{{ system_name }}_test"
+dump_file_name: "{{ project_root }}/{{ system_name }}dump.sql"

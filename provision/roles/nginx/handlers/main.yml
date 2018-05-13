@@ -1,0 +1,10 @@
+---
+- name: restart php-fpm
+  service: name=php-fpm state=restarted enabled=yes
+
+- name: restart nginx
+  service: name=nginx state=restarted enabled=yes
+
+- name: restart pandora_agent_daemon
+  service: name=pandora_agent_daemon state=restarted enabled=yes
+

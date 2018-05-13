@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+//各ページ用
+@import "../theme";
+//旧バージョンのカラーテーマ
+@import "theme";
+//新バージョンのカラーテーマ
+@import "extend";
+//新バージョンのextend集
+@import "mixin"; //新バージョンのminin集
+body.type-sp {
+  font-size: 14px;
+  background: #FFF;
+  input[type=radio], input[type=checkbox] {
+    //display: inline-block;
+    //margin: 0;
+  }
+  label {
+    //padding-left: 0;
+    margin-right: 0;
+  }
+
+  @import "component/component";
+  @import "set/set";
+  @import "page/area-top";
+  @import "page/job-search";
+
+  .js-show-toggle {
+    display: none;
+    &.is-showed {
+      display: block;
+    }
+  }
+  .js-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    //min-height: 100vh;
+    background: #FFF;
+    z-index: 99;
+    overflow-y: scroll;
+  }
+  .js-overlay-move {
+
+  }
+  .js-selected-category {
+    .js-selected-category-clear {
+      display: none;
+      &.is-active {
+        display: inline;
+      }
+      &.op-active {
+        display: inline;
+      }
+    }
+  }
+  .js-selected-category-open {
+    &.is-hided {
+      display: none;
+    }
+  }
+  .js-tab-content {
+    display: none;
+  }
+  .js-omit-select-btn {
+
+    &.is-maxed {
+      &:after {
+        content: '…';
+        display: inline-block;
+        color: $fontcolor;
+      }
+    }
+    .c-btn-radio-item {
+      display: none;
+      &.is-showed {
+        display: inline;
+      }
+    }
+  }
+
+}
+
+
+
+

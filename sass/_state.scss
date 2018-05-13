@@ -1,0 +1,160 @@
+/* 
+  js用のスタイル
+-------------
+01. カルーセル
+02. アコーディオンパネル
+03. スティッキーヘッダー
+04. フォーム必須項目
+05. スライダーSlick
+-------------
+*/
+
+/*  01. カルーセル ====================== */
+.kv img{
+	margin:0 auto;
+}
+
+/*  02. アコーディオンパネル ================ */
+
+.panel-head{
+	display:block;
+}
+
+
+/*  03. スティッキーヘッダー ========== */
+
+.fixed{ 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+
+/*  04. フォーム必須項目 ================ */
+.form-requiredItem{
+	background: #ffdfdf!important;
+}
+
+
+/*  05. スライダーSlick ================ */
+//詳細ページ
+.mod-jobDetailBox{
+	.mod-jobDetailBox__slider{
+		//for slick
+		.slick-next,
+		.slick-prev {
+			top: 43.5%;
+			margin-bottom: 20px;
+		}
+		.slick-next{
+			right: 25px;
+			z-index: 100;
+		}
+		.slick-prev{
+			left: 25px;
+			z-index: 100;
+		}
+	}
+}
+.slick-slide img{
+	max-height:240px;
+}
+.slick-slide {
+	.img{
+		@include pie-clearfix();
+		display:inline-block;
+		position: relative;
+		background:#EEE;
+		text-align:center;
+					width: 100%;
+		padding-top: 0%!important;
+	}
+	.img img{
+		position: relative!important;
+		top: auto!important;
+		left: auto!important;
+		right: auto!important;
+		bottom: auto!important;
+		margin:auto!important;
+		max-width: 100%;
+		max-height: 100%;
+
+	}
+}
+
+
+//スマホ
+@media (max-width:767px){
+	.slick-slide {
+		text-align: center;
+		.img{
+			width: 60%;
+			padding-top: 45%;
+			margin:0 auto;
+		}
+		.img img{
+		}
+		.mod-slider__excerpt{
+			text-align: left;
+		}
+		.slick-next{
+			right: -15px;
+			z-index: 2;
+		}
+		.slick-prev{
+			left: -15px;
+			z-index: 2;
+		}
+	}
+	.mod-recommendBox{
+		margin: 0 7.5px;
+		.slick-slide {
+			.img{
+				width: 100%;
+				padding-top: 75%;
+			}
+			.detail{
+				text-align:left;
+			}
+		}
+		.slick-slider {
+			.slick-next{
+				right: 0px;
+				z-index: 2;
+			}
+			.slick-prev{
+				left: 0px;
+				z-index: 2;
+			}
+		}
+	}
+}
+
+//スマホ
+@media (max-width:480px){
+	.slick-slide {
+		.img{
+			width: 80%;
+			padding-top: 60%;
+		}
+	}
+	.mod-recommendBox{
+		margin: 0 0px;
+		.slick-slide {
+			.img{
+				width: 80%;
+				padding-top: 60%;
+			}
+		}
+		.slick-slider {
+			.slick-next{
+				right: 25px;
+			}
+			.slick-prev{
+				left: 25px;
+			}
+		}
+	}
+}

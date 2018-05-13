@@ -1,0 +1,68 @@
+<?php
+
+return [
+    [
+        'id' => 1,
+        'tenant_id' => 1,
+        'searchkey_item_name' => '長期（6ヶ月以上）',
+        'sort' => 1,
+        'valid_chk' => 1,
+        'searchkey_item_no' => 1,
+    ],
+    [
+        'id' => 2,
+        'tenant_id' => 1,
+        'searchkey_item_name' => '期間限定（1ヶ月～6ヶ月）',
+        'sort' => 2,
+        'valid_chk' => 1,
+        'searchkey_item_no' => 2,
+    ],
+    [
+        'id' => 3,
+        'tenant_id' => 1,
+        'searchkey_item_name' => '１ヶ月以内',
+        'sort' => 3,
+        'valid_chk' => 1,
+        'searchkey_item_no' => 3,
+    ],
+    [
+        'id' => 4,
+        'tenant_id' => 1,
+        'searchkey_item_name' => '1週間以内',
+        'sort' => 4,
+        'valid_chk' => 1,
+        'searchkey_item_no' => 4,
+    ],
+    [
+        'id' => 5,
+        'tenant_id' => 2,
+        'searchkey_item_name' => '長期（6ヶ月以上）',
+        'sort' => 1,
+        'valid_chk' => 1,
+        'searchkey_item_no' => 1,
+    ],
+    [
+        'id' => 6,
+        'tenant_id' => 2,
+        'searchkey_item_name' => '期間限定（1ヶ月～6ヶ月）',
+        'sort' => 2,
+        'valid_chk' => 1,
+        'searchkey_item_no' => 2,
+    ],
+    [
+        'id' => 7,
+        'tenant_id' => 2,
+        'searchkey_item_name' => '１ヶ月以内',
+        'sort' => 3,
+        'valid_chk' => 1,
+        'searchkey_item_no' => 3,
+    ],
+    [
+        'id' => 8,
+        'tenant_id' => 2,
+        'searchkey_item_name' => '1週間以内',
+        'sort' => 4,
+        'valid_chk' => 1,
+        'searchkey_item_no' => 4,
+    ],
+];
